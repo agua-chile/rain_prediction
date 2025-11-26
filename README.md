@@ -1,4 +1,4 @@
-# Australian Rainfall Prediction
+# Rainfall Prediction
 
 A Python project that predicts daily rainfall in the Melbourne area using historical weather data and machine learning models.
 
