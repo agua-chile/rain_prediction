@@ -11,9 +11,7 @@ A Python project that predicts daily rainfall in the Melbourne area using histor
 
 ## Acknowledgements
 
-Jeff Grossman
-Abhishek Gagneja
-IBM Corporation
+A special thanks to Jeff Grossman, Abhishek Gagneja, IBM Corporation, and Coursera for creating the course that I based this project on.
 
 ## Features
 
