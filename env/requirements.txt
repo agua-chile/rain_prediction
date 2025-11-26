@@ -1,0 +1,11 @@
+# scientific Computing & Data Analysis
+numpy
+pandas
+matplotlib
+seaborn
+
+# machine Learning
+scikit-learn
+
+# terminal Color Output
+colorama
