@@ -59,7 +59,6 @@ def create_random_forest_pipeline(preprocessor, random_state=42):
             ('preprocessor', preprocessor),
             ('classifier', RandomForestClassifier(random_state=random_state))
         ])
-        
         return pipeline
     except Exception as e:
         handle_error(e, def_name='create_random_forest_pipeline')
@@ -82,12 +81,7 @@ def create_logistic_regression_pipeline(preprocessor, random_state=42):
 def train_random_forest(X_train, y_train, preprocessor, random_state=42, cv_folds=5, n_jobs=-1):
     try:
         print('Training Random Forest...')
-        
-        # create pipeline
         rf_pipeline = create_random_forest_pipeline(preprocessor, random_state=random_state)
-        
-        # grid search
-
         rf_param_grid = {
             'classifier__n_estimators': [50, 100],
             'classifier__max_depth': [None, 10, 20],
@@ -101,12 +95,9 @@ def train_random_forest(X_train, y_train, preprocessor, random_state=42, cv_fold
             n_jobs=n_jobs,
             verbose=1
         )
-        
         rf_grid.fit(X_train, y_train)
-        
         print(f'Best Random Forest parameters: {rf_grid.best_params_}')
         print(f'Best Random Forest CV score: {rf_grid.best_score_:.4f}')
-        
         return rf_grid
     except Exception as e:
         handle_error(e, def_name='train_random_forest')
