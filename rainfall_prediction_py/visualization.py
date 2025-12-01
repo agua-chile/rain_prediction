@@ -34,8 +34,10 @@ def plot_target_distribution(y, title='Target Distribution'):
         ax1.tick_params(axis='x', rotation=0)
         
         # pie chart
-        y.value_counts().plot(kind='pie', ax=ax2, autopct='%1.1f%%', 
-                            colors=['skyblue', 'salmon'])
+        y.value_counts().plot(
+            kind='pie', ax=ax2, autopct='%1.1f%%', 
+            colors=['skyblue', 'salmon']
+        )
         ax2.set_title(f'{title} - Proportions')
         ax2.set_ylabel('')
         
@@ -121,7 +123,7 @@ def plot_model_comparison(results_df):
                 axes[i].set_ylabel(metric)
                 axes[i].tick_params(axis='x', rotation=45)
                 
-                # Add value labels on bars
+                # add value labels on bars
                 for j, v in enumerate(results_df[metric]):
                     if pd.notna(v):
                         axes[i].text(j, v + 0.01, f'{v:.3f}', ha='center', va='bottom')
